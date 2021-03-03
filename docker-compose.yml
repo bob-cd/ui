@@ -88,23 +88,23 @@ services:
     networks:
       - bob-net
 
-
   ui:
     image: codesimple/elm:0.19
+    working_dir: /src
+    entrypoint: ["elm","reactor"]
     ports:
       - 7979:8000
     volumes:
       - ./elm:/src/
-    working_dir: /src
-    entrypoint: ["elm","reactor"]
-
 
   nginx-proxy:
-    #TODO: integrate with elm server which will call bob from browser
-    # maybe we need another container called elm-ui
     image: nginx:alpine
+    networks:
+      - bob-net
+    depends_on:
+      - apiserver
     environment:
-      BACKEND: apiserver:8000
+      BACKEND: apiserver:7777
     ports:
       - 7887:80
     volumes:
