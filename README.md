@@ -6,8 +6,10 @@
 
 ### Running
 1. `docker-compose up` 
-2. In your browser, visit `localhost:7779`
+2. To query bob's `/pipelines` endpoint from the browser, visit `localhost:7887/pipelines`
+3. 2. To view the Elm Reactor page, visit `localhost:7979`
 
 ### Development
 1. `cd elm`
-2. `elm reactor`
+  - to transpire the code to JavaScript: `elm reactor`
+  - to run the tests `elm-test`
