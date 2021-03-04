@@ -28,4 +28,6 @@ jobs:
       - uses: justgook/setup-elm@1.2.0
       - run: |
         cd elm
-        elm-test
+        npm i -g --prefix .
+        ./bin/elm-test .
+
