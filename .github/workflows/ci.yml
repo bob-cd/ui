@@ -26,8 +26,5 @@ jobs:
 
       - name: "Run Tests"
       - uses: justgook/setup-elm@1.2.0
-      - run: |
-        cd elm
-        npm i -g --prefix .
-        ./bin/elm-test .
+      - run: cd elm && npm i -g --prefix . && ./bin/elm-test .
 
