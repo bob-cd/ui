@@ -24,13 +24,15 @@ jobs:
       - name: "Checkout code"
         uses: "actions/checkout@v2"
 
-      - name: "Install dependencies"
-        run: npm i --prefix . elm-test -g
-
       - name: "Run Tests"
-        with:
-          path: elm
-        run: ../bin/elm-test
+      - uses: justgook/setup-elm@1.2.0
+      - run: |>
+        cd elm
+        elm-test
+        
+
+
+
 
         
         
