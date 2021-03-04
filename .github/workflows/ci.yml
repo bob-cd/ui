@@ -26,35 +26,6 @@ jobs:
 
       - name: "Run Tests"
       - uses: justgook/setup-elm@1.2.0
-      - run: |>
+      - run: |
         cd elm
         elm-test
-        
-
-
-
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
