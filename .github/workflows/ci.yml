@@ -22,5 +22,5 @@ jobs:
     runs-on: "ubuntu-latest"              
     steps:
       - name: "Run Tests"
-        uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v2"
         run: ./run.sh elm-test
