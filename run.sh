@@ -15,7 +15,7 @@ __elm-test() {
   echo "Elm exists?"
   ls "${ELM_HOME}/bin/elm-test"
   cd ${ELM_HOME}
-  ${ELM_HOME}/bin/elm-test tests
+  ./bin/elm-test tests
 }
 
 validate_args() {
