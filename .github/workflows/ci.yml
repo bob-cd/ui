@@ -22,7 +22,7 @@ jobs:
     runs-on: "ubuntu-latest"              
     steps:
       - name: "Run Tests"
-        run: pwd && ./run.sh elm-test
+        run: pwd && ls -R && ./run.sh elm-test
 
 
 
