@@ -12,7 +12,9 @@ install-elm-test-deps() {
 
 __elm-test() {
   install-elm-test-deps
-  echo "Testing elm at ${ELM_HOME}"
+  echo "Elm exists?"
+  ls "${ELM_HOME}/bin/elm-test"
+  cd ${ELM_HOME}
   ${ELM_HOME}/bin/elm-test tests
 }
 
