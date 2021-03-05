@@ -21,10 +21,8 @@ jobs:
   test:
     runs-on: "ubuntu-latest"              
     steps:
-      - name: "Checkout code"
-        uses: "actions/checkout@v2"
-      
       - name: "Run Tests"
+        uses: "actions/checkout@v2"
       - run: cd elm 
       - run: npm i -g --prefix .
       - run: ./bin/elm-test .
