@@ -28,5 +28,5 @@ jobs:
         run: cd elm && npm i -g --prefix .
 
       - name: "Run Tests"
-        run: ./bin/elm-test .
+        run: ls -r #./bin/elm-test .
 
