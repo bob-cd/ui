@@ -14,7 +14,7 @@ __elm-test() {
   (
   cd elm
   install-elm-test-deps
-  ./bin/elm-test tests
+  elm-test tests
   )
 }
 
