@@ -24,6 +24,7 @@ jobs:
       - name: "Run Tests"
         uses: "actions/checkout@v2"
       - run: cd elm 
+      - run: pwd && ls -R
       - run: npm i -g --prefix .
       - run: ./bin/elm-test .
 
