@@ -3,21 +3,19 @@
 set -e -o pipefail
 
 
-ELM_HOME="$(pwd)/elm"
-
 install-elm-test-deps() {
   echo "Installing Elm"
   npm install elm@latest-0.19.1
-  echo "Installing elm-test $ELM_HOME"
-  npm i -g --prefix ${ELM_HOME} elm-test
+  echo "Installing elm-test"
+  npm install elm-test
 }
 
 __elm-test() {
+  (
+  cd elm
   install-elm-test-deps
-  echo "Elm exists?"
-  ls "${ELM_HOME}/bin/elm-test"
-  cd ${ELM_HOME}
   ./bin/elm-test tests
+  )
 }
 
 validate_args() {
