@@ -14,7 +14,12 @@ __elm-test() {
   (
   cd elm
   install-elm-test-deps
+  echo 1
+  ls .
+  echo 2
+  ls node_modules
   node_modules/elm-test/bin/elm-tests tests
+
   rm -r node_modules bin package-lock.json lib
   )
 }
