@@ -6,6 +6,8 @@ set -e -o pipefail
 ELM_HOME="$(pwd)/elm"
 
 install-elm-test-deps() {
+  echo "Installing Elm"
+  npm install elm@latest-0.19.1
   echo "Installing elm-test $ELM_HOME"
   npm i -g --prefix ${ELM_HOME} elm-test
 }
