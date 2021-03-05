@@ -23,9 +23,10 @@ jobs:
     steps:
       - name: "Run Tests"
         uses: "actions/checkout@v2"
-      - run: cd elm 
-      - run: pwd && ls -R
-      - run: npm i -g --prefix .
-      - run: pwd && ls -R
-      - run: ./bin/elm-test .
+        run: |
+        cd elm 
+        pwd && ls -R
+        npm i -g --prefix .
+        pwd && ls -R
+        ./bin/elm-test .
 
