@@ -22,6 +22,9 @@ __elm-test() {
   ls node_modules/elm-test
   echo 4
   ls node_modules/elm-test/bin
+  echo 5
+  ls node_modules/elm-test/bin/elm-test
+  node_modules/elm-test/bin/elm-test
   node_modules/elm-test/bin/elm-test tests
 
   rm -r node_modules bin package-lock.json lib
