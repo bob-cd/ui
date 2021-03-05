@@ -27,6 +27,9 @@ jobs:
       - name: "Install dependencies"
         run: cd elm && npm i -g --prefix .
 
+      - name: "Show files"
+        run: ls -R #./bin/elm-test .
+
       - name: "Run Tests"
-        run: ls -r #./bin/elm-test .
+        run: cd elm && ./bin/elm-test .
 
