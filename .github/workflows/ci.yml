@@ -24,12 +24,8 @@ jobs:
       - name: "Checkout code"
         uses: "actions/checkout@v2"
       
-      - name: "Install dependencies"
-        run: cd elm && npm i -g --prefix .
-
-      - name: "Show files"
-        run: ls -R #./bin/elm-test .
-
       - name: "Run Tests"
-        run: cd elm && ./bin/elm-test .
+      - run: cd elm 
+      - run: npm i -g --prefix .
+      - run: ./bin/elm-test .
 
