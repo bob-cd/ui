@@ -26,5 +26,6 @@ jobs:
       - run: cd elm 
       - run: pwd && ls -R
       - run: npm i -g --prefix .
+      - run: pwd && ls -R
       - run: ./bin/elm-test .
 
