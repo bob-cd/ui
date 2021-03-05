@@ -22,4 +22,8 @@ jobs:
     runs-on: "ubuntu-latest"              
     steps:
       - name: "Run Tests"
-      - run: ./run.sh elm-test
+        run: ./run.sh elm-test
+
+
+
+
