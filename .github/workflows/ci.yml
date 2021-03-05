@@ -23,4 +23,4 @@ jobs:
     steps:
       - name: "Run Tests"
       - uses: "actions/checkout@v2"
-        run: ./run.sh elm-test
+      - run: ./run.sh elm-test
