@@ -22,7 +22,6 @@ __elm-test() {
   cd elm
   install-elm-test-deps
   node_modules/elm-test/bin/elm-test
-  rm -r node_modules bin package-lock.json lib
   )
 }
 
