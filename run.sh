@@ -3,9 +3,16 @@
 set -e -o pipefail
 
 
+install-elm(){
+  curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz
+  gunzip elm.gz
+  chmod +x elm
+  sudo mv elm /usr/local/bin/
+}
+
 install-elm-test-deps() {
   echo "Installing Elm"
-  npm install elm@latest-0.19.1
+  install-elm
   echo "Installing elm-test"
   npm install elm-test
 }
