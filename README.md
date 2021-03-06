@@ -10,6 +10,6 @@
 3. 2. To view the Elm Reactor page, visit `localhost:7979`
 
 ### Development
-1. `cd elm`
-  - to transpire the code to JavaScript: `elm reactor`
-  - to run the tests `elm-test`
+The code lives in the `src` folder and tests in the `tests` folder 
+- to transpire the code to JavaScript: `elm reactor`
+- to run the tests, run `./run.sh elm-test`
