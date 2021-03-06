@@ -13,4 +13,3 @@
 The code lives in the `src` folder and tests in the `tests` folder 
 - to transpire the code to JavaScript: `elm reactor`
 - to run the tests, run `./run.sh elm-test`
-
