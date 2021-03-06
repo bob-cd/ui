@@ -1,4 +1,4 @@
-module Main exposing (..)
+module WordAppender exposing (..)
 
 -- Press buttons to increment and decrement a counter.
 --

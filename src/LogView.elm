@@ -1,4 +1,4 @@
-module Main exposing (Model(..), Msg(..), init, main, subscriptions, update, view)
+module LogView exposing (Model(..), Msg(..), init, main, subscriptions, update, view)
 
 import Browser
 import Html exposing (Html, pre, text)
@@ -32,7 +32,7 @@ init : () -> ( Model, Cmd Msg )
 init _ =
     ( Loading
     , Http.get
-        { url = "https://elm-lang.org/assets/public-opinion.txt"
+        { url = "http://localhost:7887/pipelines"
         , expect = Http.expectString GotText
         }
     )
@@ -75,10 +75,10 @@ view : Model -> Html Msg
 view model =
     case model of
         Failure ->
-            text "I was unable to load your book."
+            text "I was unable to load your logs."
 
         Loading ->
-            text "Loading..."
+            text "Loading...!"
 
         Success fullText ->
             pre [] [ text fullText ]

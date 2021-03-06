@@ -2,7 +2,6 @@
 
 set -e -o pipefail
 
-
 install-elm(){
   curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz
   gunzip elm.gz
@@ -11,17 +10,25 @@ install-elm(){
 }
 
 install-elm-test-deps() {
-  echo "Installing Elm"
-  install-elm
-  echo "Installing elm-test"
-  npm install elm-test
+  if [ -z $(which elm) ]; then
+    echo "Installing Elm"
+    install-elm
+  else
+    echo "Elm already exists"
+  fi
+  if [ -z $(which elm-test) ]; then
+    echo "Installing elm-test"
+    npm install elm-test
+  else
+    echo "elm-test already exists"
+    export ELM_TEST_HOME=$(which elm-test)
+  fi
 }
 
 __elm-test() {
   (
-  cd elm
   install-elm-test-deps
-  node_modules/elm-test/bin/elm-test
+  $ELM_TEST_HOME
   )
 }
 
