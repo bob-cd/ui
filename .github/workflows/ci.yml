@@ -13,20 +13,27 @@
 #   You should have received a copy of the GNU Affero General Public License
 #   along with Bob. If not, see <http://www.gnu.org/licenses/>.
 
-name: "Test-and-Publish"
+name: Test-and-Publish
 
 on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: "ubuntu-latest"              
+    runs-on: ubuntu-latest
     steps:
-      - name: "Checkout Code"
-        uses: "actions/checkout@v2"
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      - name: "Run tests"
-        run: ./run.sh elm-test
+      - name: Setup Elm
+        uses: jorelali/setup-elm@v2
+        with:
+          elm-version: 0.19.1
 
+      - name: Setup node
+        uses: actions/setup-node@v2
 
+      - name: Setup elm-test
+        run: npm install -g elm-test
 
-
+      - name: Run tests
+        run: elm-test
