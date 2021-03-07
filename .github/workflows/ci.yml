@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v2
 
       - name: Setup elm-test
-        run: npm install -g elm-test
+        run: npm install elm-test
 
       - name: Run tests
-        run: elm-test
+        run: ./node_modules/elm-test/bin/elm-test
