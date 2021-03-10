@@ -33,8 +33,8 @@ header =
         , width fill
         , Background.color darkBlue
         ]
-        [ goldify "Logo"
-        , el [ alignRight ] (goldify "MenuButton")
+        [ colorify "Logo" gold
+        , el [ alignRight ] (colorify "MenuButton" gold)
         ]
 
 
@@ -52,12 +52,12 @@ footer =
         , width fill
         , height (px 30)
         ]
-        [ goldify "this is footer text" ]
+        [ colorify "this is footer text" gold ]
 
 
-goldify : String -> Element msg
-goldify text =
-    Element.el [ Font.color gold ] (Element.text text)
+colorify : String -> Color -> Element msg
+colorify text color =
+    Element.el [ Font.color color ] (Element.text text)
 
 
 lightBlue : Color
