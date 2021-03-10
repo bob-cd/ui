@@ -9,6 +9,7 @@ import Colors exposing (..)
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
+import Element.Font as Font
 
 
 main =
@@ -51,6 +52,15 @@ sidebar =
         [ height fill
         , Border.width 1
         , padding 20
+        , Background.color lightBlue
+        , Font.color gold
+        , Border.widthEach
+            { top = 1
+            , bottom = 1
+            , right = 1
+            , left = 0
+            }
+        , Border.color lightBlue
         ]
         [ sidebarContent "item 1"
         , sidebarContent "item 2"
@@ -77,7 +87,7 @@ content =
 
 footer =
     row
-        [ Background.color purple
+        [ Background.color black
         , width fill
         , height (px 30)
         ]
