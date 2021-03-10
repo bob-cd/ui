@@ -9,7 +9,6 @@ import Colors exposing (..)
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
-import Element.Font as Font
 
 
 main =
@@ -22,7 +21,7 @@ view =
         , height fill
         ]
         [ header
-        , content
+        , middle
         , footer
         ]
 
@@ -34,8 +33,37 @@ header =
         , width fill
         , Background.color darkBlue
         ]
-        [ colorify "Logo" gold
+        [ colorify "🛠👷\u{200D}♀️ bob-cd" gold
         , el [ alignRight ] (colorify "MenuButton" gold)
+        ]
+
+
+middle =
+    row
+        [ width fill
+        , height fill
+        ]
+        [ sidebar, content ]
+
+
+sidebar =
+    column
+        [ height fill
+        , Border.width 1
+        , padding 20
+        ]
+        [ sidebarContent "item 1"
+        , sidebarContent "item 2"
+        ]
+
+
+sidebarContent : String -> Element msg
+sidebarContent t =
+    row
+        [ width fill
+        , padding 10
+        ]
+        [ text t
         ]
 
 
@@ -54,8 +82,3 @@ footer =
         , height (px 30)
         ]
         [ colorify "this is footer text" gold ]
-
-
-colorify : String -> Color -> Element msg
-colorify text color =
-    Element.el [ Font.color color ] (Element.text text)

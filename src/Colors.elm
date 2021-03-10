@@ -1,6 +1,12 @@
 module Colors exposing (..)
 
 import Element exposing (..)
+import Element.Font as Font
+
+
+colorify : String -> Color -> Element msg
+colorify text color =
+    Element.el [ Font.color color ] (Element.text text)
 
 
 lightBlue : Color
