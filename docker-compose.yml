@@ -90,12 +90,12 @@ services:
 
   ui:
     image: codesimple/elm:0.19
-    working_dir: /src
+    working_dir: /opt
     entrypoint: ["elm","reactor"]
     ports:
-      - 7979:8000
+      - 8000:8000
     volumes:
-      - ./elm:/src/
+      - ./:/opt/
 
   nginx-proxy:
     image: nginx:alpine
